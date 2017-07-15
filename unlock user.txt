@@ -1,0 +1,8 @@
+
+To unlock an user manually:
+Open command prompt
+
+ALTER USER username ACCOUNT UNLOCK;
+
+to change his password:
+alter user username identified by new_password;
