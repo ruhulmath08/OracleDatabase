@@ -1,0 +1,209 @@
+﻿page-2-8
+SELECT
+    last_name,
+    salary
+FROM
+    employees
+WHERE
+    salary <= 3000;
+
+2-9
+SELECT
+    last_name,
+    salary
+FROM
+    employees
+WHERE
+    salary BETWEEN 2500 AND 3500
+
+2-9
+SELECT
+    last_name,
+    salary
+FROM
+    employees
+WHERE
+    LAST_NAME BETWEEN 'King' AND 'Smith';
+
+2-10
+SELECT
+    EMPLOYEE_ID
+    last_name,
+    salary,
+    MANAGER_ID
+FROM
+    employees
+WHERE
+    MANAGER_ID IN (100, 101, 102);
+
+2-10
+SELECT
+    EMPLOYEE_ID
+    last_name,
+    salary,
+    MANAGER_ID
+FROM
+    employees
+WHERE
+    LAST_NAME IN ('Hartsteni', 'Vargas');
+
+2-11
+SELECT
+    FIRST_NAME
+FROM
+    employees
+WHERE
+    FIRST_NAME LIKE 'S%';
+
+2-11
+SELECT
+    last_name,
+    HIRE_DATE
+FROM
+    employees
+WHERE
+    HIRE_DATE LIKE '%94';
+
+2-12
+SELECT
+    last_name
+FROM
+    employees
+WHERE
+    LAST_NAME LIKE '_o%';
+
+2-12
+SELECT
+    EMPLOYEE_ID,
+    LAST_NAME,
+    JOB_ID
+FROM
+    employees
+WHERE
+    JOB_ID LIKE '%SA\_%' ESCAPE '\';
+
+2-13
+SELECT
+    LAST_NAME,
+    MANAGER_ID
+FROM
+    employees
+WHERE
+    MANAGER_ID IS NULL;
+
+2-13
+SELECT
+    LAST_NAME,
+    JOB_ID,
+    COMMISSION_PCT
+FROM
+    employees
+WHERE
+    COMMISSION_PCT IS NULL;
+
+2-15
+SELECT
+    EMPLOYEE_ID,
+    LAST_NAME,
+    JOB_ID,
+    SALARY
+FROM
+    employees
+WHERE
+    SALARY >=10000
+AND 
+    JOB_ID LIKE '%MAN%';
+
+2-16
+SELECT
+    EMPLOYEE_ID,
+    LAST_NAME,
+    JOB_ID,
+    SALARY
+FROM
+    employees
+WHERE
+    SALARY >=10000
+OR 
+    JOB_ID LIKE '%MAN%';
+
+2-17
+SELECT
+    last_name,
+    job_id
+FROM
+    employees
+WHERE
+    job_id NOT IN (
+        'IT_PROG','ST_CLERK', 'SA_REP'
+    );
+2-19
+SELECT
+    last_name,
+    job_id,
+    SALARY
+FROM
+    employees
+WHERE
+    job_id = 'SA_REP'
+OR
+    job_id = 'AD_PRES'
+AND
+    SALARY > 15000;
+
+2-19
+SELECT
+    last_name,
+    job_id,
+    salary
+FROM
+    employees
+WHERE
+    (
+            job_id = 'SA_REP'
+        OR
+            job_id = 'AD_PRES'
+    ) AND
+        salary > 15000;
+
+2-20
+SELECT
+    last_name,
+    job_id,
+    department_id,
+    hire_date
+FROM
+    employees
+ORDER BY hire_date;
+
+2-21
+SELECT
+    last_name,
+    job_id,
+    department_id,
+    hire_date
+FROM
+    employees
+ORDER BY hire_date DESC;
+
+2-21
+SELECT
+    employee_id,
+    last_name,
+    salary * 12 annsal
+FROM
+    employees
+ORDER BY annsal;
+
+2-21
+SELECT
+    last_name,
+    department_id,
+    salary
+FROM
+    employees
+ORDER BY department_id,salary DESC;
+
+
+2-21
+
