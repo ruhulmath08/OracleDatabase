@@ -205,5 +205,24 @@ FROM
 ORDER BY department_id,salary DESC;
 
 
-2-21
+2-24
+SELECT
+    department_id,
+    last_name,
+    salary,
+    department_id
+FROM
+    employees
+WHERE
+    employee_id = &employee_num;
+
+2-26
+SELECT
+    last_name,
+    department_id,
+    salary*12
+FROM
+    employees
+WHERE
+    JOB_ID = '&job_title';
 
