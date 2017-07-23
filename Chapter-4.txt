@@ -1,0 +1,128 @@
+Reporting Aggregated Data Using Group Function.
+
+1. What is group function?
+	Ans:-Group functions are built-in SQL functions that operate on groups of rows and return one value for the entire group. These functions are: COUNT, MAX, MIN, AVG, SUM, DISTINCT
+
+2. What is count function? Write the formate of count function
+	Ans:- Count is a built-in function that returns the number of rows in atable. The count function has three formats.
+COUNT(*)
+COUNT(expr)
+COUNT(DISTINCT expr)
+
+3. Why we use GROUP BY close in SQL?
+	Ans:- We use GROUP BY close to divide the rows in a table into group.
+
+Querry
+Page: 4-6
+
+SELECT
+    AVG(salary),
+    MAX(salary),
+    MIN(salary),
+    SUM(salary)
+FROM
+    employees
+WHERE
+
+    job_id LIKE '%REP%';
+Display the avarage, maximum, minimum and summation of salary from employees table where job_id is like '%REP%'
+
+Page: 4-7
+
+SELECT
+    MIN(HIRE_DATE),
+    MAX(HIRE_DATE)
+FROM
+    employees;
+
+Display the first and last hire_date from employee table.
+
+SELECT
+    MIN(LAST_NAME),
+    MAX(LAST_NAME)
+FROM
+    employees;
+
+Display the last_name which smallest and largest in length from employee table.
+
+Page: 4-8
+
+SELECT
+    COUNT(*)
+FROM
+    employees
+WHERE
+    department_id = 50;
+
+Display the number of rows in employees table which department_id is 50.
+
+SELECT
+    COUNT(COMMISSION_PCT)
+FROM
+    employees
+WHERE
+    department_id = 80;
+
+Display the number of rows with non-null values in employees table which department_id is 80.
+
+Page: 4-9
+
+SELECT
+    COUNT(DISTINCT DEPARTMENT_ID)
+FROM
+    employees;
+
+Display the number of rows with distinct non-null values in employees table
+
+Page: 4-10
+
+SELECT
+    AVG(COMMISSION_PCT)
+FROM
+    employees;
+
+Display the average of COMMISSION_PCT that ignore null value from employees table.
+Group function ignore null value in the column.
+SELECT
+    AVG(NVL(commission_pct, 0))
+FROM
+    employees;
+
+Display the average of COMMISSION_PCT that include null value from employees table. 
+
+The NVL function force group function to include null value 
+
+Page: 4-13
+
+SELECT
+    DEPARTMENT_ID, AVG(SALARY)
+FROM
+    employees
+GROUP BY DEPARTMENT_ID;
+
+Display the average SALARY of same DEPARTMENT_ID in the employee table.
+
+Page: 4-14
+
+SELECT
+    DEPARTMENT_ID,
+    AVG(SALARY)
+FROM
+    employees
+GROUP BY DEPARTMENT_ID
+ORDER BY AVG(SALARY);
+
+Display the average salary of same department_id in assending order.
+
+Page: 8-16
+
+SELECT
+    DEPARTMENT_ID dept_id,
+    JOB_ID,
+    SUM(SALARY)
+FROM
+    employees
+GROUP BY DEPARTMENT_ID, JOB_ID;
+
+
+
