@@ -226,3 +226,45 @@ FROM
 WHERE
     JOB_ID = '&job_title';
 
+2-27
+SELECT
+    department_id,
+    LAST_NAME,
+    JOB_ID,'&colmn_name',
+    salary*12
+FROM
+    employees
+WHERE &condition
+    ORDER BY &order_column;
+
+2-28
+SELECT
+    employee_id,
+    last_name,
+    job_id,
+    &&column_name
+FROM
+    employees
+ORDER BY &column_name;
+
+2-29
+DEFINE employee_num = 200
+SELECT
+    EMPloyee_ID,
+    LAST_NAME,
+    salary,
+    DEPARTMENT_ID
+FROM
+    employees
+WHERE 
+    EMPLOYEE_ID = &employee_num
+
+2-30
+SET VERIFY ON
+SELECT
+    employee_id,
+    last_name,
+    SALARY
+FROM
+    employees
+WHERE EMPLOYEE_ID = &employee_num;
